@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			agenda: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -23,7 +24,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				fetch("https://playground.4geeks.com/contact/agendas/agenda_marina")
+				.then(response => response.json())
+				.then(data => setStore({ agenda: data.contacts }))
 			},
+
+
+			// DELETE AQUI 
+			deleteContact: (id) => {
+				fetch(`https://playground.4geeks.com/contact/agendas/agenda_marina/contacts/${id}`,  {
+					method: "DELETE",
+				})
+				.then(response => response.json())
+				.then(data => console.log(data))
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

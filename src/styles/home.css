@@ -1,0 +1,19 @@
+.perfil {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .perfil h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 1px solid black;
+  }
+  
+  .container {
+    border: 1px solid black; 
+    padding: 5px; 
+  }
+  
